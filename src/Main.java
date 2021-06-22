@@ -9,6 +9,10 @@ public class Main {
         minute=scanner.nextInt();
         System.out.println("Please type seconds");
         second=scanner.nextInt();
+        if(second<0||second>59){
+            System.out.println("Wrong seconds");
+            return;
+        }
         Thread thread=new Thread(new TimerRunnable(minute,second));
         thread.start();
 
